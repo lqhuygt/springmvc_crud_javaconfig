@@ -54,6 +54,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> findStudentById(int studentId) {
+        // nếu k dùng list thì sử dụng queryObject
         List<Student> studentList = jdbcTemplate.query("SELECT * FROM STUDENT1 where stu_id=?",
             new Object[] { studentId }, new RowMapper<Student>() {
                 @Override

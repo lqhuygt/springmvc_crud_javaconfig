@@ -12,9 +12,9 @@
 <div align="center">
     <h1>Create student</h1>
 
-    <form:form action="/update" method="post" modelAttribute="listStudent">
+    <form:form action="update" method="post" modelAttribute="listStudent" >
         <table>
-
+            <form:hidden path="id"/>
             <tr>
                 <td>Name:</td>
                 <td><form:input path="name" /></td>

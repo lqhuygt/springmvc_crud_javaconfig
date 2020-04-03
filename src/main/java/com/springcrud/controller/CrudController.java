@@ -42,11 +42,11 @@ public class CrudController {
             return new ModelAndView("redirect:/student");
     }
 
-    @RequestMapping(value = "/update/{studentId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/update/{studentId}")
     public ModelAndView findStudentById( @PathVariable("studentId") int studentId){
         List<Student> studentList = studentDao.findStudentById(studentId);
         ModelAndView model = new ModelAndView("edit");
-        model.addObject("listStudent",studentList);
+        model.addObject("listStudent",studentList.get(0));
 
         return model;
     }
